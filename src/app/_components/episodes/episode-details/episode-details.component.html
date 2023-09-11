@@ -1,0 +1,12 @@
+<mat-card>
+    <div class="modal-header">
+        <button mat-button class="close-button" (click)="closeDialog()">X</button>
+      </div>
+    <mat-card-content>
+      <h2>{{ data.name }}</h2>
+      <p><strong>Episode:</strong> {{ data.episode }}</p>
+        <p><strong>Air date:</strong> {{ data.air_date }}</p>
+        <p><strong>Characters:</strong> {{ charactersNamesString }}</p>
+    </mat-card-content>
+</mat-card>
+  

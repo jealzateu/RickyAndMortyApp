@@ -1,0 +1,27 @@
+<div class="button-container">
+    <button mat-button (click)="navigateToCharacters()">Go to Characters</button>
+    <button mat-button (click)="navigateToLocations()">Go to Locations</button>
+</div>
+  
+<div class="episode-list">
+    <h2 class="list-title">List of Episodes</h2>
+  
+    <div class="episode-cards">
+      <ng-container *ngFor="let episode of episodes">
+        <mat-card class="episode-card">
+          <mat-card-content>
+            <h3>{{ episode.name }}</h3>
+            <p>Episode: {{ episode.episode }}</p>
+          </mat-card-content>
+        <button mat-button color="primary" (click)="showEpisodeDetails(episode)">View details</button>
+        </mat-card>
+      </ng-container>
+    </div>
+</div>
+  
+
+<div class="pagination">
+    <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="loadNextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>

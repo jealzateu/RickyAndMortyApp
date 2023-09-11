@@ -1,0 +1,15 @@
+<mat-card>
+    <div class="modal-header">
+        <button mat-button class="close-button" (click)="closeDialog()">X</button>
+      </div>
+    <img mat-card-image [src]="data.image" alt="{{ data.name }}">
+    <mat-card-content>
+      <h2>{{ data.name }}</h2>
+      <p><strong>Status:</strong> {{ data.status }}</p>
+        <p><strong>Species:</strong> {{ data.species }}</p>
+        <p><strong>Gender:</strong> {{ data.gender }}</p>
+        <p><strong>Origin:</strong> {{ data.origin.name }}</p>
+        <p><strong>Location:</strong> {{ data.location.name }}</p>
+    </mat-card-content>
+</mat-card>
+  

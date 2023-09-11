@@ -1,0 +1,29 @@
+<div class="button-container">
+  <button mat-button (click)="navigateToLocations()">Go to Locations</button>
+  <button mat-button (click)="navigateToEpisodes()">Go to Episodes</button>
+</div>
+
+<div class="character-list">
+
+  <h2 class="list-title">List of Characters</h2>
+
+  <mat-grid-list cols="4" rowHeight="400px">
+    <mat-grid-tile *ngFor="let character of characters">
+      <mat-card class="character-card">
+        <img mat-card-image [src]="character.image" alt="{{ character.name }}">
+        <mat-card-content>
+          <h3>{{ character.name }}</h3>
+          <p>Status: {{ character.status }}</p>
+        </mat-card-content>
+        <button mat-button color="primary" (click)="showCharacterDetails(character)">View details</button>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+</div>
+
+<div class="pagination">
+  <button (click)="loadPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+  <button (click)="loadNextPage()" [disabled]="currentPage === totalPages">Next</button>
+</div>
